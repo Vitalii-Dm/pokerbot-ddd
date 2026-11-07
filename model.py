@@ -640,11 +640,12 @@ class Model:
         to_call = gs.call_amount
         top = gs.current_bet
         sizes = set()
-        for frac in RAISE_FRACS:
-            sizes.add(int(top + frac * (pot + to_call)))
         if self.street == 0 and top <= gs.big_blind:
+            sizes.add(2 * gs.big_blind)
             sizes.add(int(2.5 * gs.big_blind))
-            sizes.add(3 * gs.big_blind)
+        else:
+            for frac in RAISE_FRACS:
+                sizes.add(int(top + frac * (pot + to_call)))
         out = set()
         for s in sizes:
             s = min(high, max(low, s))
