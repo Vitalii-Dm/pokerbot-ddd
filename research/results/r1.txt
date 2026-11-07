@@ -1,0 +1,15 @@
+variant             H2H sum pool mean    TOTAL  |   v:base  v:check astlearn oresizes :realize :samples
+v:base                 +127      +190    +1836  |        -      -16      +53      +50       -8      +48
+v:check                 -11      +187    +1674  |      +16        -      +11      +16       +8      -62
+v:realize               +36      +180    +1656  |       +8       -8       +9      +32        -       -5
+v:samples               -20      +183    +1626  |      -48      +62      -21      -19       +5        -
+v:fastlearn             -35      +184    +1620  |      -53      -11        -      +17       -9      +21
+v:moresizes             -97      +178    +1503  |      -50      -16      -17        -      -32      +19
+pool detail:
+  v:base           tight:+77 random:+349 call:+417 PushFo:+153 Maniac:+239 MinRai:+130 Trappe:+124 LAG:+107 SmartE:+113
+  v:check          tight:+77 random:+326 call:+417 PushFo:+153 Maniac:+276 MinRai:+83 Trappe:+124 LAG:+150 SmartE:+80
+  v:fastlearn      tight:+86 random:+314 call:+417 PushFo:+136 Maniac:+263 MinRai:+94 Trappe:+101 LAG:+129 SmartE:+117
+  v:moresizes      tight:+68 random:+234 call:+417 PushFo:+153 Maniac:+239 MinRai:+121 Trappe:+131 LAG:+117 SmartE:+120
+  v:realize        tight:+67 random:+311 call:+413 PushFo:+153 Maniac:+247 MinRai:+127 Trappe:+128 LAG:+112 SmartE:+63
+  v:samples        tight:+92 random:+262 call:+409 PushFo:+123 Maniac:+264 MinRai:+150 Trappe:+133 LAG:+104 SmartE:+110
+(N=300 deals x2 seats, h2h CI ~±54; 286s)

@@ -1,0 +1,13 @@
+variant             H2H sum pool mean    TOTAL  | ile:v_ev _ev_real gto_safe _gto_ev2 _bandit2
+file:sp_ev_real          -4      +178    +2839  |      -56        -       -6      +52       +7
+file:v_ev               +78      +168    +2759  |        -      +56      -19      +13      +29
+file:sp_gto_safe        +44      +153    +2493  |      +19       +6        -      +35      -16
+file:sp_gto_ev2         -69      +155    +2405  |      -13      -52      -35        -      +29
+file:sp_bandit2         -49      +141    +2202  |      -29       -7      +16      -29        -
+pool detail:
+  file:v_ev        tight:+80 random:+331 call:+409 Maniac:+281 MinRai:+161 Trappe:+148 LAG:+163 SmartE:+129 SmallB:+140 Overbe:+49 Steale:+310 Honest:+120 NaiveE:+100 file:s:+110 file:s:+117 file:s:+35
+  file:sp_ev_real  tight:+81 random:+329 call:+426 Maniac:+260 MinRai:+167 Trappe:+165 LAG:+187 SmartE:+171 SmallB:+140 Overbe:+66 Steale:+314 Honest:+119 NaiveE:+123 file:s:+128 file:s:+117 file:s:+53
+  file:sp_gto_safe tight:+80 random:+267 call:+430 Maniac:+238 MinRai:+158 Trappe:+128 LAG:+161 SmartE:+163 SmallB:+131 Overbe:+51 Steale:+258 Honest:+98 NaiveE:+59 file:s:+111 file:s:+70 file:s:+46
+  file:sp_gto_ev2  tight:+82 random:+233 call:+400 Maniac:+263 MinRai:+154 Trappe:+156 LAG:+164 SmartE:+141 SmallB:+132 Overbe:+78 Steale:+211 Honest:+115 NaiveE:+122 file:s:+114 file:s:+99 file:s:+9
+  file:sp_bandit2  tight:+86 random:+187 call:+482 Maniac:+259 MinRai:+206 Trappe:+77 LAG:+118 SmartE:+133 SmallB:+29 Overbe:+41 Steale:+219 Honest:+87 NaiveE:+51 file:s:+135 file:s:+113 file:s:+27
+(N=600 deals x2 seats, h2h CI ~±38; 739s)

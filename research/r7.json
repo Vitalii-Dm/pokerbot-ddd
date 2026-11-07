@@ -1,0 +1,6 @@
+{"champ": {},
+ "realpost": {"Model.learn_realize_post": true},
+ "check": {"CHECK_MODEL": true},
+ "fastreal": {"REALIZE_PRIOR_CHIPS": 1000.0},
+ "samples2k": {"SAMPLES": 2000},
+ "file:sp_gto_safe4": {}}

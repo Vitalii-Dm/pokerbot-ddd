@@ -1,0 +1,13 @@
+variant             H2H sum pool mean    TOTAL  |     v:ev v:foldhi v:foldlo   v:fast honestlo
+v:foldhi                +27      +159    +2251  |      +16        -       -5      +11       +5
+v:foldlo                +27      +151    +2146  |       -6       +5        -      +32       -3
+v:fast                  -87      +153    +2053  |       -6      -11      -32        -      -38
+v:honestlo              +14      +143    +2023  |      -22       -5       +3      +38        -
+v:ev                    +19      +126    +1785  |        -      -16       +6       +6      +22
+pool detail:
+  v:ev             tight:+82 random:+114 call:+376 Maniac:+204 MinRai:+104 Trappe:+105 LAG:+106 SmartE:+208 SmallB:+95 Overbe:+83 Steale:+153 file:s:+59 file:s:+73 file:s:+6
+  v:foldhi         tight:+77 random:+289 call:+375 Maniac:+271 MinRai:+120 Trappe:+132 LAG:+191 SmartE:+113 SmallB:+97 Overbe:+93 Steale:+277 file:s:+68 file:s:+94 file:s:+27
+  v:foldlo         tight:+85 random:+229 call:+376 Maniac:+275 MinRai:+86 Trappe:+94 LAG:+225 SmartE:+194 SmallB:+103 Overbe:+40 Steale:+235 file:s:+84 file:s:+69 file:s:+25
+  v:fast           tight:+76 random:+324 call:+376 Maniac:+221 MinRai:+97 Trappe:+111 LAG:+123 SmartE:+182 SmallB:+118 Overbe:+67 Steale:+252 file:s:+87 file:s:+54 file:s:+51
+  v:honestlo       tight:+81 random:+291 call:+375 Maniac:+216 MinRai:+97 Trappe:+150 LAG:+137 SmartE:+89 SmallB:+131 Overbe:+74 Steale:+263 file:s:+43 file:s:+74 file:s:-14
+(N=150 deals x2 seats, h2h CI ~±80; 143s)

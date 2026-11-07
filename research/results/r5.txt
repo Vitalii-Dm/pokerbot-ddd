@@ -1,0 +1,9 @@
+variant             H2H sum pool mean    TOTAL  | ile:v_ev e:sp_gto p_gto_ev
+file:sp_gto_ev           +4      +166    +2662  |       +6       -1        -
+file:v_ev                +8      +164    +2637  |        -      +14       -6
+file:sp_gto             -12      +139    +2209  |      -14        -       +1
+pool detail:
+  file:v_ev        tight:+93 random:+263 call:+388 Maniac:+243 MinRai:+133 Trappe:+204 LAG:+207 SmartE:+153 SmallB:+161 Overbe:+15 Steale:+221 Honest:+139 NaiveE:+116 file:s:+94 file:s:+163 file:s:+36
+  file:sp_gto      tight:+82 random:+224 call:+488 Maniac:+246 MinRai:+107 Trappe:+148 LAG:+185 SmartE:+146 SmallB:+141 Overbe:+33 Steale:+88 Honest:+102 NaiveE:+71 file:s:+61 file:s:+92 file:s:+8
+  file:sp_gto_ev   tight:+89 random:+265 call:+396 Maniac:+247 MinRai:+129 Trappe:+195 LAG:+192 SmartE:+187 SmallB:+164 Overbe:+61 Steale:+209 Honest:+130 NaiveE:+131 file:s:+115 file:s:+152 file:s:-6
+(N=600 deals x2 seats, h2h CI ~±40; 619s)

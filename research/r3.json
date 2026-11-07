@@ -1,0 +1,5 @@
+{"ev": {},
+ "foldhi": {"PRIOR_FREQ": "= {k: ((v[0]+0.1, v[1]-0.1, v[2]) if k in FACING else v) for k, v in PRIOR_FREQ.items()}"},
+ "foldlo": {"PRIOR_FREQ": "= {k: ((v[0]-0.1, v[1]+0.1, v[2]) if k in FACING else v) for k, v in PRIOR_FREQ.items()}"},
+ "fast": {"PRIOR_WEIGHT": 2.5, "BUCKET_WEIGHT": 2.0},
+ "honestlo": {"HONESTY_PRIOR": 0.7}}

@@ -1,0 +1,15 @@
+variant             H2H sum pool mean    TOTAL  |  v:champ realpost  v:check fastreal amples2k to_safe4
+v:check                 +11      +157    +2521  |      +30       +5        -       -2       +3      -25
+v:fastreal              +34      +152    +2460  |      +17      +15       +2        -      +40      -41
+v:samples2k              -1      +149    +2387  |      +17      +28       -3      -40        -       -3
+file:sp_gto_safe4       +69      +144    +2372  |      -16      +17      +25      +41       +3        -
+v:champ                 -31      +148    +2330  |        -      +17      -30      -17      -17      +16
+v:realpost              -81      +142    +2196  |      -17        -       -5      -15      -28      -17
+pool detail:
+  v:champ          tight:+79 random:+241 call:+432 Maniac:+253 MinRai:+140 Trappe:+150 LAG:+124 SmartE:+105 SmallB:+95 Overbe:+78 Steale:+211 Honest:+86 NaiveE:+94 file:s:+135 file:s:+90 file:s:+48
+  v:realpost       tight:+80 random:+271 call:+436 Maniac:+226 MinRai:+208 Trappe:+144 LAG:+166 SmartE:+98 SmallB:+73 Overbe:+35 Steale:+156 Honest:+86 NaiveE:+87 file:s:+135 file:s:+90 file:s:-14
+  v:check          tight:+79 random:+350 call:+432 Maniac:+232 MinRai:+112 Trappe:+112 LAG:+168 SmartE:+135 SmallB:+88 Overbe:+66 Steale:+250 Honest:+86 NaiveE:+127 file:s:+135 file:s:+90 file:s:+48
+  v:fastreal       tight:+81 random:+266 call:+428 Maniac:+251 MinRai:+152 Trappe:+131 LAG:+148 SmartE:+119 SmallB:+86 Overbe:+72 Steale:+229 Honest:+86 NaiveE:+104 file:s:+135 file:s:+90 file:s:+48
+  v:samples2k      tight:+67 random:+298 call:+440 Maniac:+256 MinRai:+200 Trappe:+112 LAG:+141 SmartE:+110 SmallB:+95 Overbe:+83 Steale:+155 Honest:+103 NaiveE:+114 file:s:+145 file:s:+66 file:s:+1
+  file:sp_gto_safe4 tight:+76 random:+250 call:+442 Maniac:+241 MinRai:+186 Trappe:+142 LAG:+155 SmartE:+109 SmallB:+60 Overbe:+26 Steale:+247 Honest:+97 NaiveE:+58 file:s:+125 file:s:+82 file:s:+9
+(N=600 deals x2 seats, h2h CI ~±35; 858s)

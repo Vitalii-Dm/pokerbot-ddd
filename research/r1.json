@@ -1,0 +1,6 @@
+{"base": {},
+ "check": {"CHECK_MODEL": true},
+ "fastlearn": {"PRIOR_WEIGHT": 2.5, "BUCKET_WEIGHT": 2.0, "HONESTY_WEIGHT": 2.0},
+ "moresizes": {"RAISE_FRACS": [0.25, 0.4, 0.55, 0.7, 1.0, 1.5, 2.2]},
+ "realize": {"REALIZE_IP": 1.0, "REALIZE_OOP": 0.85},
+ "samples": {"SAMPLES": 2500}}
