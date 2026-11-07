@@ -74,11 +74,11 @@ FACING = ("pre_vs_raise", "pre_vs_reraise", "post_facing", "post_vs_raise")
 PRIOR_FREQ = {
     "pre_open": (0.2, 0.3, 0.5),
     "pre_option": (0.0, 0.7, 0.3),
-    "pre_vs_raise": (0.4, 0.4, 0.2),
-    "pre_vs_reraise": (0.3, 0.4, 0.3),
+    "pre_vs_raise": (0.3, 0.5, 0.2),
+    "pre_vs_reraise": (0.2, 0.5, 0.3),
     "post_free": (0.0, 0.55, 0.45),
-    "post_facing": (0.4, 0.45, 0.15),
-    "post_vs_raise": (0.35, 0.45, 0.2),
+    "post_facing": (0.3, 0.55, 0.15),
+    "post_vs_raise": (0.25, 0.55, 0.2),
 }
 PRIOR_WEIGHT = 5.0
 # Size buckets for fold-to-bet: owed / pot before calling.
