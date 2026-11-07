@@ -94,6 +94,7 @@ REALIZE_OOP = 0.9
 RAISE_FRACS = (0.4, 0.7, 1.0, 1.5)  # raise sizes, as fractions of the pot
 RAISE_MARGIN = 0.5  # chips a raise must beat the passive option by
 CHECK_MODEL = False  # value a check by the opponent's reply to it
+LIMP_MODEL = True  # value a limp by the big blind's raise over it
 REALIZE_PRIOR_CHIPS = 2000.0  # weight of the default realisation
 REALIZE_MIN = 0.6
 REALIZE_MAX = 1.5
@@ -272,6 +273,7 @@ class Model:
             },
             "honesty": {"pre": [0.0, 0.0], "post": [0.0, 0.0]},
             "real": [0.0, 0.0],  # postflop chips won, chips expected
+            "opt_raise": [0, 0],  # raises over our limp: all-in, all
         }
 
     def _observe(self, action, gs, update_range):
@@ -303,6 +305,12 @@ class Model:
         pot_before = sum(self.contrib)
         if p == self.opp and self.n == 2:
             self._learn_action(gs, kind, owed, top, pot_before, update_range)
+            if (kind == "raise" and update_range and self.street == 0
+                    and owed == 0):
+                counts = self.stats[self.opp_team]["opt_raise"]
+                counts[1] += 1
+                if gs.stacks[p] <= 0.2 * action.amount:
+                    counts[0] += 1
         if kind == "call":
             add = owed
             self.bets[p] = top
@@ -517,6 +525,11 @@ class Model:
             all_in = to_call >= my_stack or opp_stack == 0
             r = 1.0 if all_in else realize
             ev_call = r * eq_all * (pot + to_call) - to_call
+            if (LIMP_MODEL and self.street == 0 and not all_in
+                    and gs.current_bet <= gs.big_blind
+                    and my_bet < gs.big_blind):
+                ev_call = self._limp_ev(gs, stats, h, n, eq_all, count_below,
+                                        eq_range, r)
             options.append((ev_call, "call", 0))
             if ev_call > best_ev:
                 best_ev = ev_call
@@ -583,6 +596,35 @@ class Model:
         ev_h = share * reply(eq_range(0, k_b)) + (1 - share) * (
             realize * eq_range(k_b, n) * pot)
         ev_d = pb * reply(eq_all) + (1 - pb) * realize * eq_all * pot
+        return h * ev_h + (1 - h) * ev_d
+
+    def _limp_ev(self, gs, stats, h, n, eq_all, count_below, eq_range, r):
+        """Value of limping from the small blind, counting the big blind's
+        raise over the limp (learned per opponent: how often, and how often
+        it is all-in), and our best reply to it: fold, or call."""
+        me, opp = self.player_id, self.opp
+        pot, to_call = gs.pot, gs.call_amount
+        my_bet, opp_bet = gs.bets[me], gs.bets[opp]
+        eff = min(my_bet + gs.stacks[me], opp_bet + gs.stacks[opp])
+        pb = self._freqs(stats, "pre_option")[2]
+        shoves, raises = stats["opt_raise"]
+        shove_share = (shoves + 2.0 * 0.5) / (raises + 2.0)
+        small = min(eff, 4 * gs.big_blind)  # a typical raise over a limp
+
+        def reply(eq):
+            fold = -to_call
+            vs_shove = max(fold, eq * 2 * eff - (eff - my_bet))
+            vs_small = max(fold, r * eq * 2 * small - (small - my_bet))
+            return shove_share * vs_shove + (1 - shove_share) * vs_small
+
+        def unraised(eq):
+            return r * eq * (pot + to_call) - to_call
+
+        k_b = count_below(pb)
+        share = k_b / n
+        ev_h = (share * reply(eq_range(0, k_b))
+                + (1 - share) * unraised(eq_range(k_b, n)))
+        ev_d = pb * reply(eq_all) + (1 - pb) * unraised(eq_all)
         return h * ev_h + (1 - h) * ev_d
 
     def _learned_realize(self, stats, default):
